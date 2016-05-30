@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <link href='https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' rel='stylesheet' type='text/css'>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="lib/ion-md-input/css/ion-md-input.min.css" rel="stylesheet">
+    <link href="lib/ionic-material/dist/ionic.material.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic-material/dist/ionic.material.min.js"></script>
+    <script src="lib/ion-md-input/js/ion-md-input.min.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/ng-cordova.min.js"></script>
+</head>
+
+<body ng-app="starter" ng-controller="DashController" class="platform-android platform-cordova platform-webview">
+    <ion-header-bar class="bar bar-header bar-positive flat">
+        <h1 class="title">Skin Doctor ( Prototype )</h1>
+    </ion-header-bar>
+    <ion-content class="padding"  ng-show="imgURI === undefined" style="height: 100%; background: url('boySlogan.png') left bottom no-repeat; background-size: 280px">
+    </ion-content>
+    <ion-content >
+        <div ng-show="imgURI === undefined">
+            <div class="row">
+                <div class="col">Take a look of how Skin Doctor will work! Take a picture of anything and see how Skin Doctor will work. No
+                    picture will be saved or send to our backends. This is a Prototype</div>
+            </div>
+            <div class="row">
+                <!--<div class="col"> <img style="width: 300px" ng-show="exib == true" ng-src=""></img>-->
+            </div>
+        </div>
+
+        <div ng-show="imgURI !== undefined">
+            <div class="row">
+                <div class="col">
+                    <img class="center"  style="width:300px; height: 200px;" ng-src="{{imgURI}}" style="text-align: center">
+                </div>
+            </div>
+            <div class="row">
+                <div class="row">
+                    <div class="col"> <img class="center"  style="width:150px; height: 85px;" ng-src="img/termo.png" style="text-align: center"></img>
+                    </div>
+                </div>
+                </div>
+            </div>
+                <div ng-show="imgURI !== undefined" class="row">
+
+                <br><br>
+                   <h2 class="center" >43%</h2>
+                   <br>
+                   </div>
+                    </div>
+                     <div  ng-show="imgURI !== undefined"class="row">
+                    <h3 class="center" > This percentage will be based on Watson knowledge about moles. </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <div class="bar bar-footer">
+        <img src="img/watson_logo.png" height="40px">
+        <div class="title">Powered by Watson</div>
+    </div>
+    <button id="fab" class="button button-positive button-fab button-fab-bottom-right" ng-click="takePicture()">
+        <i class="icon ion-camera"></i>
+    </button>
+
+</body>
+
+</html>
